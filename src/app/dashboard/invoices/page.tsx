@@ -13,7 +13,8 @@ import {
   ExternalLink,
   MessageSquare,
   CheckCircle2,
-  Clock
+  Clock,
+  FileText
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
