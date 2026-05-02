@@ -61,7 +61,7 @@ export default function DashboardPage() {
         <div className="flex items-center gap-4">
            <Badge className="bg-kova-green/10 text-kova-green border-none py-1 px-3 rounded-full text-[10px] font-black uppercase">Live Account</Badge>
            <div className="w-10 h-10 rounded-full bg-kova-mist flex items-center justify-center font-black text-kova-navy">
-             {businessName[0]}
+             {businessName ? businessName[0] : "Y"}
            </div>
         </div>
       </nav>
@@ -118,7 +118,7 @@ export default function DashboardPage() {
                     Just message the bot with a client name and amount. We'll handle the professional formatting and tracking for you.
                   </p>
                   <div className="pt-4">
-                    <Link href="https://wa.me/kova_africa" target="_blank">
+                    <Link href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_BOT_NUMBER || "14155238886"}`} target="_blank">
                       <Button className="h-16 px-10 rounded-2xl bg-kova-green text-white font-black text-sm uppercase tracking-widest flex gap-3 hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-kova-green/20">
                         <Smartphone className="w-5 h-5" />
                         Message Kova Bot
