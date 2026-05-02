@@ -37,7 +37,7 @@ export function Step1Phone({ onNext, updateData, data }: Step1Props) {
       if (response.ok) {
         setShowOtp(true);
       } else {
-        setError(result.error || "Failed to send OTP");
+        setError(result.message || result.details || result.error || "Failed to send OTP");
       }
     } catch (err) {
       setError("Network error. Please try again.");

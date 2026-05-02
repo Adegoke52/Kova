@@ -51,15 +51,22 @@ export async function POST(req: Request) {
     if (termiiResponse.ok) {
       return NextResponse.json({ success: true, message: "OTP sent via WhatsApp" });
     } else {
-      console.error("Termii Error:", termiiData);
+      console.error("Termii Error Details:", JSON.stringify(termiiData));
       return NextResponse.json(
-        { error: "Failed to send WhatsApp message", details: termiiData },
-        { status: 500 }
+        { 
+          error: "WhatsApp provider error", 
+          details: termiiData.message || "Unknown error from Termii",
+          code: termiiResponse.status 
+        },
+        { status: 502 }
       );
     }
-  } catch (error) {
-    console.error("OTP API Error:", error);
-    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+  } catch (error: any) {
+    console.error("OTP API Critical Error:", error);
+    return NextResponse.json({ 
+      error: "Service temporarily unavailable", 
+      message: error.message 
+    }, { status: 500 });
   }
 }
 
