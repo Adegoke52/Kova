@@ -30,8 +30,11 @@ export async function POST(req: Request) {
 
     console.log(`[KOVA] Sending OTP ${otp} to ${cleanPhone}`);
 
-    // 4. Call Termii API
-    const termiiResponse = await fetch("https://api.ng.termii.com/api/sms/send", {
+    // 4. Call Termii API (Passing API key in URL as well for maximum compatibility)
+    const apiKey = process.env.TERMII_API_KEY;
+    const termiiUrl = `https://api.ng.termii.com/api/sms/send?api_key=${apiKey}`;
+    
+    const termiiResponse = await fetch(termiiUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -42,11 +45,18 @@ export async function POST(req: Request) {
         sms: `Hi! Your Kova verification code is ${otp}. It expires in 5 minutes.`,
         type: "whatsapp",
         channel: "whatsapp",
-        api_key: process.env.TERMII_API_KEY,
+        api_key: apiKey,
       }),
     });
 
-    const termiiData = await termiiResponse.json();
+    let termiiData: any = {};
+    const responseText = await termiiResponse.text();
+    
+    try {
+      termiiData = JSON.parse(responseText);
+    } catch (e) {
+      termiiData = { message: responseText };
+    }
 
     if (termiiResponse.ok) {
       return NextResponse.json({ success: true, message: "OTP sent via WhatsApp" });
