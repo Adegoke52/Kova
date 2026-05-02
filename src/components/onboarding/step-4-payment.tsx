@@ -23,10 +23,13 @@ export function Step4Payment({ onNext, updateData, data }: Step4Props) {
 
   const handleSubmit = async () => {
     setLoading(true);
-    // In production, save to Prisma via /api/onboarding
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    onNext();
-    setLoading(false);
+    try {
+      await onNext();
+    } catch (error) {
+      alert("Failed to save your details. Please check your connection and try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const isComplete = data.bankName && data.accountNumber.length === 10 && data.accountName;

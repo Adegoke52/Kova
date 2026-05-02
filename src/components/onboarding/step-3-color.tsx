@@ -31,28 +31,54 @@ export function Step3Color({ onNext, updateData, data }: Step3Props) {
 
   return (
     <div className="space-y-8">
-      {/* Mini Preview */}
-      <Card className="bg-kova-white overflow-hidden border-2 border-kova-mist shadow-sm">
-        <div className="p-4 bg-kova-mist/50 border-b border-kova-mist flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center text-[10px] font-bold" style={{ color: data.brandColor }}>
-              {data.name?.substring(0, 2).toUpperCase() || "KS"}
+      {/* Premium Live Preview */}
+      <div className="relative mb-12">
+        <div className="absolute -inset-4 bg-white/40 blur-2xl rounded-[3rem] -z-10" />
+        <div className="bg-white rounded-[2.5rem] border border-white shadow-2xl overflow-hidden relative">
+          {/* Header Strip */}
+          <div className="h-2 w-full" style={{ backgroundColor: data.brandColor }} />
+          
+          <div className="p-8 space-y-6">
+            <div className="flex justify-between items-start">
+              <div className="space-y-2">
+                <div className="w-10 h-10 rounded-xl bg-kova-mist flex items-center justify-center p-2">
+                   <div className="w-full h-full rounded-sm" style={{ backgroundColor: data.brandColor }} />
+                </div>
+                <h4 className="text-sm font-black text-kova-navy tracking-tight">{data.name || "Your Business"}</h4>
+              </div>
+              <Badge className="text-[8px] border-kova-green/20 text-kova-green font-black px-3 py-1 rounded-full uppercase tracking-widest bg-kova-green/5">
+                Paid
+              </Badge>
             </div>
-            <span className="text-xs font-bold text-kova-navy">{data.name || "Business Name"}</span>
-          </div>
-          <Smartphone className="w-4 h-4 text-kova-subtle" />
-        </div>
-        <div className="p-6">
-          <div className="h-4 w-24 bg-kova-mist rounded-full mb-3" />
-          <div className="flex justify-between items-end">
-            <div className="space-y-2">
-              <div className="h-3 w-16 bg-kova-mist rounded-full" />
-              <div className="h-6 w-32 rounded-lg" style={{ backgroundColor: data.brandColor + "20" }} />
+
+            <div className="space-y-1">
+              <p className="text-[8px] font-black uppercase tracking-[0.2em] text-kova-subtle">Amount Due</p>
+              <h3 className="text-3xl font-black text-kova-navy tracking-tighter">₦45,500.00</h3>
             </div>
-            <div className="h-10 w-24 rounded-xl" style={{ backgroundColor: data.brandColor }} />
+
+            <div className="pt-4 space-y-3">
+              <div className="h-px w-full bg-kova-mist" />
+              <div className="flex justify-between items-center">
+                <span className="text-[9px] font-bold text-kova-subtle uppercase tracking-widest">Client</span>
+                <span className="text-[10px] font-black text-kova-navy">Tunde Olowo</span>
+              </div>
+            </div>
+
+            <Button 
+              className="w-full h-12 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg"
+              style={{ backgroundColor: data.brandColor, color: '#FFFFFF' }}
+            >
+              View Detailed Invoice
+            </Button>
           </div>
         </div>
-      </Card>
+        
+        {/* Floating Accent */}
+        <div 
+          className="absolute -bottom-6 -right-6 w-24 h-24 rounded-full blur-3xl opacity-20 transition-colors duration-500"
+          style={{ backgroundColor: data.brandColor }}
+        />
+      </div>
 
       <Card>
         <CardContent className="pt-6 space-y-6">

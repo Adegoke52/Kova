@@ -8,6 +8,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { SmoothScroll } from "@/components/ui/smooth-scroll";
 import { TextReveal } from "@/components/ui/text-reveal";
+import { MobileMenu } from "@/components/ui/mobile-menu";
 
 export default function AboutPage() {
   return (
@@ -22,19 +23,22 @@ export default function AboutPage() {
               </div>
               <span className="font-black text-2xl text-kova-navy tracking-tighter">Kova</span>
             </Link>
-            <Link href="/onboarding">
-              <Button
-                className="rounded-xl px-8 h-12 font-black transition-all hover:scale-105 active:scale-95 shadow-xl"
-                style={{ backgroundColor: '#A855F7', color: '#FFFFFF' }}
-              >
-                Join Kova
-              </Button>
-            </Link>
+            <div className="flex items-center gap-4">
+              <Link href="/onboarding" className="hidden md:block">
+                <Button
+                  className="rounded-xl px-8 h-12 font-black transition-all hover:scale-105 active:scale-95 shadow-xl"
+                  style={{ backgroundColor: '#A855F7', color: '#FFFFFF' }}
+                >
+                  Join Kova
+                </Button>
+              </Link>
+              <MobileMenu isScrolled={true} />
+            </div>
           </div>
         </nav>
 
         {/* Hero Section */}
-        <section className="pt-48 pb-32 px-6 bg-[#1A1060] relative overflow-hidden">
+        <section className="pt-32 pb-16 md:pt-48 md:pb-32 px-6 bg-[#1A1060] relative overflow-hidden">
           <div className="absolute top-0 right-0 w-[60%] h-[60%] bg-kova-purple rounded-full blur-[180px] opacity-10" />
           <div className="absolute bottom-0 left-0 w-[60%] h-[60%] bg-kova-green rounded-full blur-[180px] opacity-10" />
 
@@ -51,7 +55,7 @@ export default function AboutPage() {
         </section>
 
         {/* The Story Section */}
-        <section className="py-32 px-6 max-w-7xl mx-auto">
+        <section className="py-16 md:py-32 px-6 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <div className="space-y-12">
               <Badge className="bg-kova-mist text-kova-navy border-none py-2 px-4 rounded-full uppercase tracking-widest text-[10px] font-black">The Kova Story</Badge>
@@ -72,7 +76,7 @@ export default function AboutPage() {
             </div>
             <div className="relative aspect-square rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(26,16,96,0.2)]">
               <Image
-                src="/team.jpg"
+                src="/team.png"
                 alt="Entrepreneur working"
                 fill
                 className="object-cover"
@@ -83,7 +87,7 @@ export default function AboutPage() {
         </section>
 
         {/* Values Grid */}
-        <section className="py-32 bg-kova-mist px-6">
+        <section className="py-16 md:py-32 bg-kova-mist px-6">
           <div className="max-w-7xl mx-auto text-center mb-24">
             <h2 className="text-5xl md:text-6xl font-black text-kova-navy tracking-tight">Our Core Values</h2>
           </div>
@@ -105,7 +109,7 @@ export default function AboutPage() {
         </section>
 
         {/* Global Impact */}
-        <section className="py-40 px-6 max-w-7xl mx-auto text-center">
+        <section className="py-24 md:py-40 px-6 max-w-7xl mx-auto text-center">
           <div className="space-y-12">
             <Badge className="bg-kova-navy text-white border-none py-2 px-4 rounded-full uppercase tracking-widest text-[10px] font-black">Future Focus</Badge>
             <h2 className="text-6xl md:text-9xl font-black text-kova-navy tracking-tighter">10 Million.</h2>
@@ -153,6 +157,7 @@ export default function AboutPage() {
                 <p className="text-xs font-black text-kova-navy uppercase tracking-widest">Company</p>
                 <ul className="space-y-4 text-sm font-bold text-kova-subtle">
                   <li><Link href="/about">About</Link></li>
+                  <li><Link href="/security">Security</Link></li>
                   <li><Link href="#">Privacy</Link></li>
                   <li><Link href="#">Terms</Link></li>
                 </ul>

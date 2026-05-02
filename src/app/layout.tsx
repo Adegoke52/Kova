@@ -12,6 +12,29 @@ export const metadata: Metadata = {
   title: "Kova | Your business, seen properly.",
   description: "Send professional, branded invoices via WhatsApp in under 30 seconds. Designed for the global informal economy.",
   manifest: "/manifest.json",
+  keywords: ["Invoicing", "WhatsApp", "Business", "Nigeria", "Africa", "Entrepreneurship", "Payments"],
+  openGraph: {
+    title: "Kova | Your business, seen properly.",
+    description: "Send professional, branded invoices via WhatsApp in under 30 seconds.",
+    url: "https://kova.africa",
+    siteName: "Kova",
+    images: [
+      {
+        url: "/Logo.png",
+        width: 800,
+        height: 800,
+        alt: "Kova Logo",
+      },
+    ],
+    locale: "en_NG",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kova | Your business, seen properly.",
+    description: "Designed for the global informal economy.",
+    images: ["/Logo.png"],
+  },
   icons: {
     icon: [
       { url: "/Logo.png", sizes: "32x32" },

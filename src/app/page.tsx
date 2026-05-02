@@ -13,7 +13,8 @@ import {
   ShieldCheck,
   Star,
   Plus,
-  ArrowRight
+  ArrowRight,
+  Lock
 } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
@@ -21,6 +22,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { SmoothScroll } from "@/components/ui/smooth-scroll";
 import { TextReveal } from "@/components/ui/text-reveal";
+import { MobileMenu } from "@/components/ui/mobile-menu";
 
 export default function LandingPage() {
   const { scrollY } = useScroll();
@@ -83,8 +85,10 @@ export default function LandingPage() {
               <Link
                 href="/login"
                 className={cn(
-                  "hidden sm:block text-[11px] font-black uppercase tracking-[0.2em] transition-colors",
-                  isScrolled ? "text-kova-navy hover:text-kova-purple" : "text-white hover:text-[#A855F7]"
+                  "hidden sm:flex items-center justify-center h-12 px-6 rounded-xl text-[11px] font-black uppercase tracking-[0.2em] transition-all hover:scale-105 active:scale-95 shadow-lg",
+                  isScrolled 
+                    ? "bg-kova-navy text-white hover:bg-kova-purple" 
+                    : "bg-white text-kova-purple hover:bg-kova-mist"
                 )}
               >
                 Client Login
@@ -98,19 +102,14 @@ export default function LandingPage() {
                 </Button>
               </Link>
               {/* Mobile Menu Trigger */}
-              <button className={cn(
-                "lg:hidden text-[11px] font-black uppercase tracking-[0.2em]",
-                isScrolled ? "text-kova-navy" : "text-[#A855F7]"
-              )}>
-                Menu
-              </button>
+              <MobileMenu isScrolled={isScrolled} />
             </div>
           </motion.div>
         </nav>
 
         {/* Hero Section */}
         <section
-          className="relative min-h-screen overflow-hidden flex flex-col items-center justify-center px-6 pt-32 pb-32"
+          className="relative min-h-screen overflow-hidden flex flex-col items-center justify-center px-6 pt-24 pb-16 md:pt-32 md:pb-32"
           style={{ backgroundColor: '#1A1060' }}
         >
           {/* Animated Mesh Gradients */}
@@ -280,7 +279,7 @@ export default function LandingPage() {
         </section>
 
         {/* Feature Grid */}
-        <section id="features" className="py-32 px-6 max-w-7xl mx-auto">
+        <section id="features" className="py-16 md:py-32 px-6 max-w-7xl mx-auto">
           <div className="text-center mb-24">
             <Badge
               className="mb-4 border-none py-2 px-4 rounded-full uppercase tracking-widest text-[10px] font-black"
@@ -340,10 +339,8 @@ export default function LandingPage() {
               </motion.div>
             ))}
           </div>
-        </section>
-
-        {/* How it Works */}
-        <section id="how-it-works" className="py-32 bg-kova-mist/30 px-6">
+        </section>        {/* How it Works */}
+        <section id="how-it-works" className="py-16 md:py-32 bg-kova-mist/30 px-6">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
               <div className="space-y-12">
@@ -383,8 +380,72 @@ export default function LandingPage() {
           </div>
         </section>
 
+        {/* Security & Trust Section */}
+        <section id="security" className="py-24 md:py-32 px-8 md:px-12 bg-[#1A1060] relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full opacity-10">
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--color-kova-purple)_1px,_transparent_1px)] bg-[size:40px_40px]" />
+          </div>
+          
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center">
+              <div className="order-2 lg:order-1 flex justify-center">
+                <div className="relative w-full max-w-[280px] sm:max-w-md aspect-square">
+                   <motion.div 
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+                    className="absolute inset-0 border-2 border-dashed border-white/10 rounded-full"
+                   />
+                   <div className="absolute inset-4 md:inset-8 border border-white/5 rounded-full flex items-center justify-center backdrop-blur-3xl bg-white/5 shadow-2xl">
+                     <ShieldCheck className="w-24 h-24 md:w-32 md:h-32 text-white opacity-20" />
+                     <motion.div 
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        className="absolute flex flex-col items-center"
+                      >
+                        <Lock className="w-16 h-16 md:w-20 md:h-20 text-[#A855F7] mb-4 drop-shadow-[0_0_20px_rgba(168,85,247,0.5)]" />
+                        <Badge className="bg-kova-green text-white border-none py-1 px-4 rounded-full text-[9px] md:text-[10px] font-black uppercase tracking-widest">Active Protection</Badge>
+                      </motion.div>
+                   </div>
+                </div>
+              </div>
+
+              <div className="space-y-10 md:space-y-12 order-1 lg:order-2 text-center lg:text-left">
+                <div className="inline-block">
+                  <Badge className="bg-white/10 text-white border-white/20 py-2 px-4 rounded-full uppercase tracking-widest text-[10px] font-black">Security Infrastructure</Badge>
+                </div>
+                <h2 className="text-4xl md:text-7xl font-black text-white leading-[1.1] tracking-tight">
+                  Your trust is <br className="hidden md:block" /> our capital.
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
+                  {[
+                    { title: "Bank-Grade Encryption", desc: "All transaction data is encrypted using 256-bit SSL protocols." },
+                    { title: "WhatsApp Verified", desc: "Official API integration ensures every message is authentic and secure." },
+                    { title: "Data Privacy", desc: "Your client lists and financial data belong to you. We never sell your data." },
+                    { title: "Dignity First", desc: "Built with legal compliance to ensure your business is protected." },
+                  ].map((item, i) => (
+                    <div key={i} className="space-y-3">
+                      <div className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center">
+                        <CheckCircle2 className="w-5 h-5 text-kova-green" />
+                      </div>
+                      <h4 className="text-xl font-bold text-white">{item.title}</h4>
+                      <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="pt-8">
+                  <Link href="/security">
+                    <Button variant="outline" className="h-14 px-10 border-white/20 text-white hover:bg-white/10 rounded-2xl font-black text-sm uppercase tracking-widest">
+                      Learn about our security
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Social Proof */}
-        <section className="py-40 px-6 overflow-hidden">
+        <section className="py-16 md:py-40 px-6 overflow-hidden">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-12">
               <div className="space-y-6">
@@ -429,7 +490,7 @@ export default function LandingPage() {
         </section>
 
         {/* Pricing */}
-        <section id="pricing" className="py-40 bg-kova-navy px-6 relative overflow-hidden">
+        <section id="pricing" className="py-16 md:py-40 bg-kova-navy px-6 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-kova-green rounded-full blur-[180px] opacity-10" />
           <div className="absolute bottom-0 left-0 w-[50%] h-[50%] bg-kova-purple rounded-full blur-[180px] opacity-10" />
 
@@ -477,7 +538,7 @@ export default function LandingPage() {
         </section>
 
         {/* Final CTA */}
-        <section className="py-40 px-6 text-center">
+        <section className="py-24 md:py-40 px-6 text-center">
           <motion.div
             whileInView={{ scale: [0.95, 1] }}
             className="max-w-4xl mx-auto space-y-12"
@@ -530,6 +591,7 @@ export default function LandingPage() {
                 <p className="text-xs font-black text-kova-navy uppercase tracking-widest">Company</p>
                 <ul className="space-y-4 text-sm font-bold text-kova-subtle">
                   <li><Link href="/about">About</Link></li>
+                  <li><Link href="/security">Security</Link></li>
                   <li><Link href="#">Privacy</Link></li>
                   <li><Link href="#">Terms</Link></li>
                 </ul>

@@ -32,6 +32,32 @@ export default function OnboardingPage() {
     setFormData(prev => ({ ...prev, ...data }));
   };
 
+  const handleComplete = async () => {
+    const { supabase } = await import("@/lib/supabase");
+    
+    const { error } = await supabase
+      .from('businesses')
+      .upsert({
+        phone: formData.phone,
+        business_name: formData.name,
+        location: formData.location,
+        brand_color: formData.brandColor,
+        bank_name: formData.bankName,
+        account_number: formData.accountNumber,
+        account_name: formData.accountName,
+      }, { onConflict: 'phone' });
+
+    if (error) {
+      console.error("Save Error:", error);
+      throw error;
+    }
+
+    // Fallback for dashboard demo
+    localStorage.setItem('kova_onboarding', JSON.stringify(formData));
+    
+    setStep(5);
+  };
+
   const steps = [
     { id: 1, title: "Phone" },
     { id: 2, title: "Identity" },
@@ -105,7 +131,7 @@ export default function OnboardingPage() {
             {step === 1 && <Step1Phone onNext={nextStep} updateData={updateFormData} data={formData} />}
             {step === 2 && <Step2Identity onNext={nextStep} updateData={updateFormData} data={formData} />}
             {step === 3 && <Step3Color onNext={nextStep} updateData={updateFormData} data={formData} />}
-            {step === 4 && <Step4Payment onNext={nextStep} updateData={updateFormData} data={formData} />}
+            {step === 4 && <Step4Payment onNext={handleComplete} updateData={updateFormData} data={formData} />}
             {step === 5 && <Step5Success data={formData} />}
           </motion.div>
         </AnimatePresence>
