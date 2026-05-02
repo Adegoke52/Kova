@@ -40,22 +40,21 @@ export function MobileMenu({ isScrolled }: MobileMenuProps) {
       <button
         onClick={() => setIsOpen(true)}
         className={cn(
-          "flex items-center gap-2 px-4 py-2 rounded-xl transition-all active:scale-95",
-          isScrolled ? "bg-kova-navy text-white" : "bg-white/10 text-white backdrop-blur-md border border-white/20"
+          "flex items-center justify-center w-12 h-12 rounded-xl transition-all active:scale-95",
+          isScrolled ? "bg-kova-navy text-white shadow-lg" : "bg-white/10 text-white backdrop-blur-md border border-white/20"
         )}
       >
-        <span className="text-[10px] font-black uppercase tracking-[0.2em]">Menu</span>
-        <Menu className="w-5 h-5" />
+        <Menu className="w-6 h-6" />
       </button>
 
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-[100] bg-[#1A1060] flex flex-col p-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-[999] bg-[#0A0620] flex flex-col p-6 overflow-y-auto"
           >
             {/* Background Decorations */}
             <div className="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none">
