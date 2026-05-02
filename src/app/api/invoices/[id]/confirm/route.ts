@@ -23,7 +23,7 @@ export async function POST(
 
     await prisma.invoice.update({
       where: { id },
-      data: { status: "PAID", paidAt: new Date() },
+      data: { status: "PAID" },
     });
 
     const message = `Payment confirmed ✅ ₦${invoice.totalAmount.toLocaleString()} from ${invoice.client.name}. INV-${invoice.invoiceNumber} is now paid.`;
