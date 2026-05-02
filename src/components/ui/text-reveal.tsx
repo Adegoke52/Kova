@@ -29,7 +29,7 @@ export function TextReveal({ text, className, delay = 0 }: TextRevealProps) {
         type: "spring",
         damping: 12,
         stiffness: 100,
-      },
+      } as const,
     },
     hidden: {
       opacity: 0,
@@ -39,7 +39,7 @@ export function TextReveal({ text, className, delay = 0 }: TextRevealProps) {
         type: "spring",
         damping: 12,
         stiffness: 100,
-      },
+      } as const,
     },
   };
 

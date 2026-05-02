@@ -9,6 +9,8 @@ import { PaymentSection } from "@/components/invoice/payment-section";
 import { ReviewSection } from "@/components/invoice/review-section";
 import { TrackOpen } from "@/components/invoice/track-open";
 
+export const dynamic = 'force-dynamic';
+
 interface PageProps {
   params: Promise<{ token: string }>;
 }

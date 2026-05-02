@@ -9,6 +9,7 @@ interface ButtonProps extends Omit<HTMLMotionProps<"button">, "onAnimationStart"
   isLoading?: boolean;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
