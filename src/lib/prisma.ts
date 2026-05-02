@@ -1,6 +1,5 @@
 import { PrismaClient } from "@prisma/client";
 
-// This ensures we only have one instance of Prisma in development
 const prismaClientSingleton = () => {
   return new PrismaClient({
     log: process.env.NODE_ENV === "development" ? ["query", "error", "warn"] : ["error"],
@@ -8,11 +7,15 @@ const prismaClientSingleton = () => {
 };
 
 declare global {
-  var prismaGlobal: undefined | ReturnType<typeof prismaClientSingleton>;
+  var prismaGlobal: ReturnType<typeof prismaClientSingleton> | undefined;
 }
 
-// We use a getter to ensure Prisma is ONLY initialized when first accessed
-// This prevents build-time crashes
-export const prisma = globalThis.prismaGlobal ?? prismaClientSingleton();
-
-if (process.env.NODE_ENV !== "production") globalThis.prismaGlobal = prisma;
+// Truly lazy proxy - only initializes on the first property access
+export const prisma = new Proxy({} as ReturnType<typeof prismaClientSingleton>, {
+  get(target, prop, receiver) {
+    if (!globalThis.prismaGlobal) {
+      globalThis.prismaGlobal = prismaClientSingleton();
+    }
+    return Reflect.get(globalThis.prismaGlobal, prop, receiver);
+  }
+});
