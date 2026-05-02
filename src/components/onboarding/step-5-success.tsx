@@ -64,17 +64,18 @@ export function Step5Success({ data }: Step5Props) {
       </div>
 
       <div className="space-y-4 pt-4">
-        <Link href={whatsappUrl} target="_blank">
-          <Button className="w-full py-7 text-lg gap-3">
+        <Link href={whatsappUrl} target="_blank" className="block w-full">
+          <Button className="w-full h-16 rounded-2xl text-base font-black uppercase tracking-widest flex items-center justify-center gap-3">
             Send your first invoice
             <ExternalLink className="w-5 h-5" />
           </Button>
         </Link>
         
-        <Link href="/dashboard">
-          <Button variant="ghost" className="w-full">
-            Go to Dashboard
-          </Button>
+        <Link 
+          href="/dashboard" 
+          className="block w-full py-4 text-kova-navy font-bold text-sm uppercase tracking-widest hover:opacity-70 transition-opacity"
+        >
+          Go to Dashboard
         </Link>
       </div>
     </motion.div>
