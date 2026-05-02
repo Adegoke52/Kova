@@ -10,18 +10,34 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function LoginPage() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [phone, setPhone] = useState("");
   const [showWhatsAppLogin, setShowWhatsAppLogin] = useState(false);
   const [showOtp, setShowOtp] = useState(false);
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSendOtp = async () => {
+    if (!phone) return setError("Please enter your number");
     setLoading(true);
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    setShowOtp(true);
-    setLoading(false);
+    setError(null);
+    try {
+      const response = await fetch("/api/auth/otp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ phone }),
+      });
+      const result = await response.json();
+      if (response.ok) {
+        setShowOtp(true);
+      } else {
+        setError(result.message || "Failed to send OTP");
+      }
+    } catch (err) {
+      setError("Network error. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleOtpChange = (index: number, value: string) => {
@@ -38,9 +54,26 @@ export default function LoginPage() {
 
   const handleVerifyOtp = async () => {
     setLoading(true);
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    // Redirect to dashboard on success
-    window.location.href = "/dashboard";
+    setError(null);
+    const code = otp.join("");
+    try {
+      const response = await fetch("/api/auth/otp", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ phone, code }),
+      });
+      
+      if (response.ok) {
+        window.location.href = "/dashboard";
+      } else {
+        setError("Invalid verification code");
+        setOtp(["", "", "", "", "", ""]);
+      }
+    } catch (err) {
+      setError("Verification failed.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -113,14 +146,16 @@ export default function LoginPage() {
                 className="space-y-6"
               >
                 {!showOtp ? (
-                  <div className="space-y-6">
                     <div className="space-y-2">
                       <label className="text-[10px] font-black text-white/40 uppercase tracking-[0.2em] ml-2">WhatsApp Number</label>
                       <Input 
                         type="tel" 
                         placeholder="+234 ..." 
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
                         className="h-14 bg-white/5 border-white/10 text-white rounded-2xl px-6 focus:ring-2 focus:ring-[#25D366] transition-all"
                       />
+                      {error && <p className="text-xs text-red-400 ml-2">{error}</p>}
                       <p className="text-[10px] text-white/40 ml-2">We'll send a 6-digit code to your WhatsApp.</p>
                     </div>
 
