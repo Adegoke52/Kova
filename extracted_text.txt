@@ -1,0 +1,1248 @@
+--- Extracting from Kova_PRD.pdf ---
+--- Page 1 ---
+kova Product Requirements Document 
+Confidential — Kova v1.0 PRD Page 1 
+ 
+kova 
+Your business, seen properly. 
+Product Requirements Document 
+Version 1.0  |  April 2026  |  Confidential 
+ 
+Status 
+In Review 
+Platform 
+Mobile-first Web 
+Market 
+Nigeria (Global) 
+Target launch 
+Q3 2026 
+ 
+  
+--- Page 2 ---
+kova Product Requirements Document 
+Confidential — Kova v1.0 PRD Page 2 
+1. Executive summary 
+Kova is a mobile-first client experience platform built for small and micro businesses across 
+Nigeria and, eventually, the world. It enables any business owner — a hairdresser, a plumber, a 
+caterer, a lawyer — to send every client a beautifully branded, professional invoice and job 
+summary page in under 30 seconds, directly through WhatsApp. 
+ 
+The platform is designed around three non-negotiable principles for the Nigerian market: zero 
+new habit required, lightweight enough to run on 3G, and visible results from the very first use. 
+Clients receive a premium experience. Business owners build a professional reputation 
+effortlessly. And every invoice sent becomes a quiet advertisement that spreads Kova 
+organically. 
+ 
+ North star:  What if every small business owner could make every client touchpoint feel like they 
+hired a top-tier agency — without hiring anyone? 
+A tool that helps you get paid faster and look professional doing itf 
+2. Problem statement 
+2.1 The perception gap 
+Small business owners in Nigeria are skilled, hardworking, and deeply trusted within their 
+communities. But the tools they use to communicate with clients — WhatsApp voice notes, 
+handwritten receipts, PDF screenshots, verbal confirmations — make them look informal, even 
+when the quality of their work is exceptional. 
+ 
+This is not a visibility problem. It is a perception problem. The gap between how good these 
+businesses actually are and how professional they appear to clients costs them repeat 
+business, referrals, and the ability to charge what they are worth. 
+ 
+2.2 Why existing tools fail 
+• Website builders (Wix, Squarespace) require too much setup, ongoing maintenance, 
+and design skill 
+• Invoicing apps (Wave, QuickBooks) are desktop-heavy, slow, and not WhatsApp-native 
+• Social media profiles are passive — they do not create direct client touchpoints after a 
+job 
+• Generic PDF invoices carry no brand identity and feel impersonal 
+• Most tools require a learning curve that Nigerian SMB owners simply do not have time 
+for 
+ 
+2.3 Key data points 
+--- Page 3 ---
+kova Product Requirements Document 
+Confidential — Kova v1.0 PRD Page 3 
+ 
+Insight Source / Context 
+40% of small businesses 
+have no website in 2025 
+Global SMB digital presence study, 2025 
+70–80% of consumers 
+research a business 
+online before visiting 
+Consumer behaviour research, 2025 
+85% of consumers trust 
+online reviews as much as 
+personal 
+recommendations 
+Mindstream Media Group study 
+Businesses using branded 
+digital proposals 
+dramatically outperform 
+those sending PDFs 
+ClientPoint, 2025 
+Platform fatigue and 
+fragmented tools erode 
+client trust 
+ClientPoint From Tools to Trust, 2025 
+2/3 of SMB owners say AI 
+has impacted their 
+business — but mostly in 
+operations, not client 
+experience 
+SMB Group Survey, 2025 
+ 
+  
+--- Page 4 ---
+kova Product Requirements Document 
+Confidential — Kova v1.0 PRD Page 4 
+3. Product vision and goals 
+3.1 Vision 
+ Vision:  To become the default client experience layer for small businesses across Africa and 
+emerging markets — the tool that makes every business owner look like a premium brand, and 
+every client feel genuinely valued. 
+ 
+3.2 Strategic goals 
+• Goal 1: Enable any small business owner to set up a fully branded profile in under 5 
+minutes 
+• Goal 2: Allow any job summary and invoice to be sent to a client in under 30 seconds 
+• Goal 3: Ensure the platform works reliably on 3G connections and low-spec Android 
+devices 
+• Goal 4: Create a self-spreading product where every client touchpoint promotes Kova 
+organically 
+• Goal 5: Build compounding retention through data, payment history, and reputation that 
+accumulates over time 
+3.3 Success metrics — MVP 
+ 
+Metric Target Timeframe Signal 
+Business sign-ups 500 active businesses Month 3 Market acceptance 
+Invoices sent per 
+business per month 
+12+ Month 2 Daily habit formed 
+Client page open rate >70% Ongoing Client engagement 
+Payment via Kova link >40% of invoices Month 3 Core value delivered 
+D30 retention (business 
+owners) 
+>60% Month 3 Stickiness 
+Organic referrals from 
+clients 
+>25% of new sign-ups Month 4 Viral flywheel working 
+Shift focus from usage → revenue impact: 
+ % of invoices paid 
+ Average revenue per user 
+ Weekly active businesses 
+ Repeat invoice rate 
+ Reviews per business 
+ 
+--- Page 5 ---
+kova Product Requirements Document 
+Confidential — Kova v1.0 PRD Page 5 
+3.4 Moat & Defensibility Strategy 
+Kova’s long-term advantage is built on a combination of data, reputation, network effects, 
+and behavioral integration. 
+As businesses use Kova, they accumulate invoice history, client records, earnings data, 
+and reviews, making Kova their primary system of record. This creates strong data lock-in, 
+as leaving the platform results in loss of business continuity and social proof. 
+Kova also establishes a transaction-backed reputation layer, where every review is tied to 
+a real job. This builds a trusted profile that increases a business’s ability to win clients and 
+charge premium rates. 
+Each invoice sent introduces new clients to Kova, creating organic network effects where 
+professional, structured transactions become expected. Over time, this drives adoption 
+through client-side demand. 
+Additionally, Kova integrates directly into existing workflows via WhatsApp, creating 
+behavioral lock-in by aligning with how businesses already operate. 
+As data compounds, Kova can evolve into a financial identity layer, enabling access to 
+insights, credit, and growth opportunities — positioning the platform as critical infrastructure 
+for small businesses 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- Page 6 ---
+kova Product Requirements Document 
+Confidential — Kova v1.0 PRD Page 6 
+4. Target users 
+4.1 Primary user — the business owner 
+Any individual or micro-business providing a service or product to clients in Nigeria. They are 
+mobile-first, WhatsApp-native, and time-poor. They want to look professional but have no time 
+or budget to hire designers or manage complex software. 
+ 
+User personas 
+ 
+Persona Description 
+Kemi — salon owner, 
+Lagos 
+Runs a 2-chair beauty studio. Sends receipts on WhatsApp. Wants 
+clients to see her as a premium salon, not a side hustle. Checks her 
+phone constantly but has no time for apps with learning curves. 
+Chidi — freelance 
+plumber, Abuja 
+Gets jobs through word of mouth. Struggles to follow up on unpaid 
+work. Wants a simple way to send a receipt that makes him look 
+trustworthy and serious. 
+Ngozi — home caterer, 
+Port Harcourt 
+Takes orders for events. Manages client expectations manually. Wants 
+a professional page clients can share when recommending her. 
+Bello — fashion designer, 
+Kano 
+Works with repeat clients. Wants to build a portfolio and reputation over 
+time. Needs something that works well on a mid-range Android phone. 
+ 
+4.2 Secondary user — the client 
+The end client is a Nigerian consumer or business who hires the small business owner. They 
+receive the Kova-generated page via WhatsApp link. They do not need an account. Their 
+experience of Kova is passive but powerful — they see a professional page, pay easily, leave a 
+review, and discover the platform.  
+--- Page 7 ---
+kova Product Requirements Document 
+Confidential — Kova v1.0 PRD Page 7 
+5. Core features — MVP 
+5.1 Feature overview 
+ 
+Feature Priority User value Anti-abandonment role 
+One-time business profile 
+setup 
+P0 — must have Sets brand identity 
+forever 
+Sunk cost — they 
+invested in setup 
+WhatsApp-triggered 
+invoice creation 
+P0 — must have Sends invoice in under 
+30 sec 
+Zero new habit — fits 
+existing flow 
+Branded client page (job 
+summary + invoice) 
+P0 — must have Client gets premium 
+experience 
+Clients talk about it, word 
+spreads 
+Payment link on client 
+page 
+P0 — must have Business owner gets 
+paid faster 
+Direct financial value, 
+instant proof 
+Client open notification P0 — must have Owner knows when client 
+viewed page 
+Dopamine hit — brings 
+them back 
+One-tap review request P1 — important Builds reputation over 
+time 
+Reviews accumulate — 
+leaving = losing them 
+Business dashboard P1 — important Track invoices, 
+payments, clients 
+Data lock-in — their 
+history lives here 
+Auto-generated logo 
+badge 
+P1 — important No logo? We make one 
+automatically 
+Zero barrier to first use 
+Client history and records P2 — nice to have Full client relationship log Deep lock-in over time 
+Payment tracking and 
+reminders 
+P2 — nice to have Chase unpaid invoices 
+automatically 
+Financial value 
+compounds 
+New Retention Features  
+ Weekly earnings summary 
+ Monthly performance snapshot 
+ Smart payment reminders (“Send reminder?”) 
+ Manual payment confirmation 
+ Status badges (“Top Rated”, “Trusted by X clients”) 
+ Progress tracking (earnings, clients, reviews) 
+5.2 Feature details 
+ 
+ 
+ 
+--- Page 8 ---
+kova Product Requirements Document 
+Confidential — Kova v1.0 PRD Page 8 
+F1 — Business profile setup (one time) 
+• Business owner uploads logo or types business name 
+• Platform auto-generates an initials badge if no logo is provided 
+• Owner adds phone number, location, and bank account for payment 
+• Owner selects a brand colour from 12 pre-set options 
+• All future invoices and client pages automatically use these brand assets 
+• Estimated setup time: under 5 minutes 
+ 
+F2 — WhatsApp-triggered invoice flow 
+• Business owner messages the Kova WhatsApp bot after completing a job 
+• Bot prompts: client name, service(s), and total amount — three fields maximum 
+• Platform generates a branded client page instantly 
+• A WhatsApp message is automatically drafted for the owner to send to their client 
+• Owner sends with one tap — no login, no app switching required 
+• Invoice number is auto-assigned and logged 
+• Contextual Templates: After the bot generates an invoice, provide the owner with 3 
+selectable message templates (e.g., Warm, Formal, Direct) to copy and send. 
+• Brand Voice Alignment: Use the "Brand Colour" and "Business Name" to auto-fill these 
+templates so they feel bespoke and agency-grade. 
+ 
+F3 — Branded client page 
+• Business logo or badge, business name, and contact details in header 
+• Auto-generated invoice number and date 
+• Client name and contact 
+• Itemised job summary with individual line amounts and total 
+• Job status (completed / in progress) 
+• Payment status (paid / unpaid) 
+• Payment button linked to owner's preferred payment method 
+• One-tap review button 
+• Powered by Kova footer — organic discovery channel 
+ 
+F4 — Client open notification 
+• When a client opens the page, the business owner receives an instant WhatsApp 
+notification 
+• Notification format: 'Tunde just opened your invoice — INV-047, ₦9,500' 
+• If payment is made: 'Payment received — ₦9,500 from Tunde. INV-047 is now paid' 
+• This single feature is the primary retention mechanism — it brings owners back every 
+time 
+ 
+ 
+--- Page 9 ---
+kova Product Requirements Document 
+Confidential — Kova v1.0 PRD Page 9 
+F5 — Business dashboard 
+• Accessible via web app (mobile-optimised) — not required for core invoice flow 
+• Overview: total invoices sent, total paid, outstanding balance, total clients 
+• Full client list with history per client 
+• Invoice log with status (sent / opened / paid / overdue) 
+• Review summary and rating display 
+• Dashboard becomes more valuable the longer a business uses Kova — compounding 
+retention 
+F5 — Handling I have paid friction 
+ The "Proof of Payment" (PoP) Bridge: Add an optional "Attach Receipt" button to the Client 
+Page after a user taps "I've Paid". 
+ Verification Workflow: WhatsApp notifications for owners will include a "Review Receipt" link 
+and a "Mark as Paid" quick-action button. 
+ Multi-State Tracking: Implement a "Payment Claimed" status between "Unpaid" and "Paid" to 
+manage expectations while the owner verifies the bank credit. 
+ 
+ 
+  
+--- Page 10 ---
+kova Product Requirements Document 
+Confidential — Kova v1.0 PRD Page 10 
+6. Key user flows 
+WhatsApp-Based Onboarding  
+Instead of traditional onboarding: 
+Kova sends: 
+ “Let’s set up your business in 2 minutes” 
+ “Send your first invoice now” 
+ “You just looked premium 👏” 
+→ Goal: First value in under 3 minutes 
+6.1 Business owner — first-time setup 
+1. Owner discovers Kova (via referral, 'powered by Kova' link, or marketing) 
+2. Opens Kova web app or scans WhatsApp QR code 
+3. Enters business name (or uploads logo) 
+4. Selects brand colour 
+5. Adds phone, location, and payment details 
+6. Profile saved — they are ready to send their first invoice 
+7. Platform sends a WhatsApp confirmation with their Kova bot number saved 
+ 
+6.2 Business owner — sending an invoice 
+8. Job is complete — owner opens WhatsApp and messages their Kova bot number 
+9. Bot responds: 'Who is this invoice for?' — owner replies with client name or number 
+10. Bot: 'What service(s) did you provide?' — owner types or selects from recent items 
+11. Bot: 'What is the total amount?' — owner types amount 
+12. Bot generates the invoice and sends back a preview with a sharable link 
+13. Owner taps to forward the link to their client on WhatsApp 
+14. Entire flow: under 30 seconds 
+ 
+6.3 Client — receiving and paying 
+15. Client receives a WhatsApp message from the business owner with a Kova link 
+16. Client opens link — sees a clean, branded invoice page 
+17. Client reviews the job summary and total amount 
+18. Client taps the pay button and completes payment via their preferred method 
+19. Client receives payment confirmation on the page 
+20. Client sees the one-tap review option — submits a rating if satisfied 
+21. Client notices 'powered by Kova' and may explore the platform 
+--- Page 11 ---
+kova Product Requirements Document 
+Confidential — Kova v1.0 PRD Page 11 
+7. Technical requirements 
+7.1 Performance requirements 
+• Client page must load in under 2 seconds on a 3G connection 
+• WhatsApp bot must respond within 3 seconds of owner message 
+• Invoice page generation must complete within 5 seconds end to end 
+• Platform must support concurrent usage across all major Nigerian mobile networks 
+• App must function on Android devices running Android 8.0 and above 
+• Any logo uploaded during setup must be auto-optimized to WebP format for low-spec 
+device compatibility. 
+ 
+7.2 Architecture overview 
+ 
+Component Approach 
+Frontend — business 
+dashboard 
+Progressive Web App (PWA) — mobile-optimised, installable, works 
+offline for viewing 
+Client invoice page Server-side rendered static page — ultra-fast load, no JavaScript 
+required to view 
+WhatsApp integration WhatsApp Business API via approved provider (e.g. Twilio, Termii, or 
+Zoko) 
+Database PostgreSQL — business profiles, invoices, clients, payments, reviews 
+File storage Cloud storage (e.g. AWS S3) for logos and brand assets 
+Notifications WhatsApp Business API for real-time client open and payment 
+notifications 
+Hosting Cloud-based with Nigerian CDN nodes to optimise for local network 
+performance 
+ 
+7.3 Security and compliance 
+• All client data encrypted in transit (TLS 1.3) and at rest 
+• Business owners authenticate via phone number OTP — no password required 
+• Payment processing delegated entire — No financial liability for Kova 
+• Client invoice pages are accessible only via unique, non-guessable URL tokens 
+• NDPA (Nigeria Data Protection Act) compliance for all user data handling 
+ 
+  
+--- Page 12 ---
+kova Product Requirements Document 
+Confidential — Kova v1.0 PRD Page 12 
+8. Brand identity 
+8.1 Brand overview 
+ 
+Brand element Definition 
+Name Kova 
+Tagline Your business, seen properly. 
+Primary colour #1A1060 — Kova Navy 
+Accent colour #7F77DD — Kova Purple 
+Background tint #EEEDFE — Kova Mist 
+Success colour #1D9E75 — Kova Green (used only for paid / live states) 
+Logo mark Three-stroke K — spine plus two arms in different weights, 
+representing business owner and client both connected 
+Typography Arial — universally supported, professional, accessible 
+Brand voice Confident, warm, straight-talking. Never corporate, never complicated. 
+ 
+8.2 Brand values 
+• Dignity — every small business deserves to be taken seriously 
+• Simplicity — if it is not effortless, it is not Kova 
+• Trust — every interaction must make the client feel safe and the owner look credible 
+• Speed — time is the most valuable resource for a small business owner 
+ 
+9. Go-to-market strategy 
+9.1 Distribution model 
+Kova is a B2B2C product. The business owner is the buyer. The client is the organic distribution 
+channel. Every invoice sent to a client is a Kova advertisement — the 'powered by Kova' link at 
+the bottom of every page drives discovery from clients who then become business owners on 
+the platform. 
+ 
+9.2 Launch phases 
+ 
+Phase Strategy 
+--- Page 13 ---
+kova Product Requirements Document 
+Confidential — Kova v1.0 PRD Page 13 
+Phase 1 — Seed (Month 1–
+2) 
+Manual onboarding of 50 businesses in Lagos across beauty, food, 
+and home services. Daily feedback. Fix what breaks. Build the 
+WhatsApp bot to be robust before scaling. 
+Phase 2 — Grow (Month 
+3–4) 
+Open sign-ups. Referral programme — existing businesses get 1 free 
+month for every business they refer. Target trade associations, market 
+groups, and local business WhatsApp communities. 
+Phase 3 — Scale (Month 
+5+) 
+Paid marketing on WhatsApp status, Instagram, and Google. Expand 
+to Abuja, Port Harcourt, Kano. Introduce premium tier with advanced 
+analytics and custom domain invoice pages. 
+ 
+9.3 Pricing model 
+ 
+Tier Details 
+Free — forever Up to 20 invoices per month. Kova branding on all pages. Basic 
+dashboard. Unlimited clients. WhatsApp bot access. 
+Pro — ₦3,500/month Unlimited invoices. Remove Kova branding. Custom brand colour per 
+invoice. Advanced dashboard with payment analytics. Priority 
+notification delivery. 
+Business — ₦8,000/month Everything in Pro. Custom invoice page domain (e.g. 
+invoice.kemisalon.com). Client portal with full job history visible to 
+repeat clients. Monthly business summary report. 
+ 
+9.4 Monetization Strategy 
+Kova’s monetization is built on a value-first principle: 
+Users only pay when they are clearly making money or gaining visible business advantage. 
+The platform follows a progressive monetization model: 
+ Free tier drives adoption and habit formation 
+ Paid tiers (Pro, Business) unlock features tied to revenue growth, branding, and 
+insights 
+This positions Kova as a revenue enabler, not a cost. 
+Future monetization layers include: 
+ Optional payment convenience features (for instant confirmation, on a per-use basis) 
+ Advanced analytics and growth tools for scaling businesses 
+ Premium visibility and trust signals (e.g., verified badges, top-rated status) 
+Pricing will continuously evolve based on user earnings, usage patterns, and retention 
+behavior, ensuring accessibility within the Nigerian market. 
+--- Page 14 ---
+kova Product Requirements Document 
+Confidential — Kova v1.0 PRD Page 14 
+1. Retention-First Product Strategy  
+Core Principle 
+If Kova does not: 
+ Help users make money 
+ Show visible progress 
+ Reward usage emotionally 
+It will be abandoned. 
+Retention Loops 
+Revenue Loop 
+1. Send invoice 
+2. Client opens 
+3. Client pays 
+4. Owner gets confirmation 
+5. Owner sees earnings 
+→ Reinforces financial value 
+Dopamine Loop  
+ “Client opened your invoice 👀” 
+ “Payment received ₦X 🎉” 
+ “You earned ₦X this week 🔥” 
+→ Emotional engagement 
+Reputation Loop 
+ Client leaves review 
+ Rating increases 
+ Business gains status 
+→ Builds switching cost 
+Follow-up Loop 
+ Unpaid invoice detected 
+ Smart reminder triggered 
+ Payment completed 
+--- Page 15 ---
+kova Product Requirements Document 
+Confidential — Kova v1.0 PRD Page 15 
+→ Drives repeat usage 
+2. Anti-Abandonment Architecture  
+First 7-Day Activation Targets 
+Within first 7 days, user must: 
+ Send 3 invoices 
+ Receive 1 payment 
+ Get 1 review 
+→ If achieved = high retention probability 
+Lock-in Mechanisms 
+Data Lock-in 
+ Invoice history 
+ Client records 
+Reputation Lock-in 
+ Reviews 
+ Ratings 
+Financial Lock-in 
+ Earnings tracking 
+3. Payment Strategy Upgrade 
+Kova does not process or hold payments. 
+Instead, Kova enables direct payment between client and business owner using familiar local 
+methods. 
+Payment Flow: 
+ Business owner adds bank or wallet details during setup (Nigeria banks)  
+ Client views payment details on invoice page  
+ Client completes transfer externally  
+ Client taps “I’ve paid”  
+ Business owner confirms and marks invoice as paid  
+Key Principles: 
+--- Page 16 ---
+kova Product Requirements Document 
+Confidential — Kova v1.0 PRD Page 16 
+ Zero onboarding friction  
+ Align with Nigerian payment behavior  
+ No third-party dependency  
+ No financial liability for Kova 
+Risk Control: 
+To prevent false payment claims: 
+ Payments are only marked as complete after owner confirmation  
+ Payment status includes: Pending, Payment Claimed, and Paid  
+ Notifications clearly indicate when a client claims to have paid 
+  
+--- Page 17 ---
+kova Product Requirements Document 
+Confidential — Kova v1.0 PRD Page 17 
+10. Risks and mitigations 
+ 
+Risk Likelihood Impact Mitigation 
+WhatsApp Business API 
+access delays or policy 
+changes 
+Medium High Build web app fallback 
+invoice creation flow 
+alongside the bot from 
+day one 
+Business owners 
+abandon after first use 
+Medium High Instant first-use value, 
+Real-time notifications, 
+Revenue feedback, 
+Payment reminders, 
+Reputation system, 
+Weekly engagement 
+nudges 
+ 
+10.1 Extended Risk Handling Framework 
+Kova operates in a trust-sensitive market where risks extend beyond technical security into 
+payment trust, identity integrity, and platform misuse. 
+To mitigate payment-related risks, Kova introduces a “Payment Claimed” state supported by 
+optional payment reference capture and quick verification actions for business owners. 
+Payments are only confirmed after owner validation, ensuring clarity without introducing friction. 
+To prevent abuse, all accounts are tied to OTP-verified phone numbers, with activity 
+monitoring, rate limits, and anomaly detection applied to identify suspicious behavior. Over time, 
+Kova will develop a trust scoring system to strengthen platform integrity. 
+To reduce dependency on external platforms, Kova maintains a web-based fallback flow for 
+invoice creation and access, ensuring continuity beyond WhatsApp constraints. 
+Finally, all reviews are invoice-linked and transaction-bound, preventing manipulation and 
+preserving the credibility of the platform’s reputation system. 
+ 
+11. Product roadmap 
+ 
+Phase Timeframe Focus Key deliverables 
+Alpha Month 1 Internal build and test WhatsApp bot, invoice 
+generation, branded 
+client page, payment 
+link, open notification 
+--- Page 18 ---
+kova Product Requirements Document 
+Confidential — Kova v1.0 PRD Page 18 
+Beta Month 2 50 real business pilots Business dashboard, 
+review system, auto logo 
+badge. 
+v1.0 Launch Month 3 Public release, Lagos Full free tier, Pro tier, 
+referral programme, 
+onboarding flow 
+v1.1 Month 4–5 Retention and growth Client history portal, 
+payment reminders, 
+invoice templates, 
+business analytics 
+v2.0 Month 6+ Scale and expand Custom domains, multi-
+city expansion, English 
+West Africa rollout, team 
+accounts for SMBs 
+ 
+12. Open questions 
+• Should Kova eventually offer its own payment processing, or remain a connector to 
+existing payment providers? 
+• At what point does the client-facing experience get a dedicated app — or does it remain 
+link-only permanently? 
+• How do we handle businesses in industries with compliance requirements (e.g. legal, 
+medical)? 
+• Should the free tier include the 'powered by Kova' link as a hard requirement, or make it 
+optional from day one to accelerate trust? 
+• What is the right moment to expand beyond Nigeria — and should West Africa or the UK 
+diaspora market come first? 
+ 
+13. Appendix 
+13.1 Glossary 
+ 
+Term Definition 
+Kova bot The WhatsApp Business API chatbot through which business owners 
+trigger invoice creation 
+Client page The branded, shareable web page that the client receives containing 
+the job summary, invoice, and payment link 
+Business profile The one-time setup that stores a business owner's brand assets, 
+contact details, and payment information 
+Invoice A record of a completed job including line items, totals, client details, 
+and payment status 
+--- Page 19 ---
+kova Product Requirements Document 
+Confidential — Kova v1.0 PRD Page 19 
+Open notification The WhatsApp alert sent to a business owner the moment their client 
+views the client page 
+Powered by Kova The attribution link at the bottom of every client page that drives 
+organic platform discovery 
+PWA Progressive Web App — a web application that can be installed on a 
+phone's home screen and works offline 
+P0 / P1 / P2 Priority levels: P0 = must have for launch; P1 = important but not 
+blocking; P2 = future consideration 
+ 
+ 
+ 
+kova 
+Your business, seen properly. 
+kovahq.com  |  hello@kovahq.com 
+
+--- Extracting from Kova_Strategic_Intelligence_Package.pdf ---
+--- Page 1 ---
+KOVA — CONFIDENTIAL  Market 
+Intelligence & Competitor Analysis  |  May 2026 
+kova  |  Your business, seen properly.   Page  
+  
+kova 
+Your business, seen properly. 
+STRATEGIC INTELLIGENCE PACKAGE 
+ 
+Market Intelligence Report  |  Competitor Analysis  |  Stakeholder Interview Guide 
+Version 
+1.0 
+Date 
+May 2026 
+Market 
+Nigeria 
+Status 
+Confidential 
+ 
+  
+--- Page 2 ---
+KOVA — CONFIDENTIAL  Market 
+Intelligence & Competitor Analysis  |  May 2026 
+kova  |  Your business, seen properly.   Page  
+SECTION 01 
+Executive Brief 
+Understanding Kova at a glance 
+ 
+What Kova Is — A Senior Assessment 
+Having read the PRD thoroughly, here is my honest read as someone who has shipped and scaled 
+products across two decades: Kova is not an invoicing tool. It is a dignity infrastructure play. The 
+founders have correctly identified that the pain Nigerian micro-business owners feel is not primarily 
+financial — it is reputational. The gap between how good these businesses are and how professional 
+they appear is costing them real money, real clients, and real confidence. 
+ 
+The product is built around a brilliant distribution insight: every invoice sent is a Kova advertisement. By 
+making the client-facing page beautiful and branded, Kova turns its own users into its sales force. This 
+is a classic B2B2C motion executed with exceptional clarity. 
+ 
+ The Core Thesis 
+If Kova can make every small business owner feel like they have a top-tier agency behind 
+them — in under 30 seconds — the product sells itself on the strength of its output, not its 
+feature list. 
+ 
+What the PRD Gets Right 
+• WhatsApp-nativeness is the correct moat. No other tool is built from the ground up for WhatsApp. 
+That is a defensible and compounding advantage. 
+• The 30-second constraint forces excellent product discipline. Most teams would add features; 
+Kova removes friction. 
+• Retention architecture is explicit and thoughtful. The dopamine loop, revenue loop, and reputation 
+loop are not afterthoughts — they are designed into the product from day one. 
+• The payment model (no processing, no liability) is exactly right for the Nigerian market and for an 
+MVP. It eliminates regulatory burden while delivering the core value. 
+• The pricing model is psychologically smart. Free tier creates habit; paid tiers unlock growth. Users 
+only pay when they are already making money. 
+ 
+What Needs Sharpening 
+• The FIRS e-invoicing mandate (now live as of January 2026) creates both a tailwind and a 
+compliance risk. Kova does not mention it. This needs to be addressed in v1.1 at the latest. 
+• The competitive landscape is more crowded than the PRD implies. Bumpa, Afri Invoice, and 
+global tools adapted for Nigeria are active. The differentiation story needs to be sharper 
+externally. 
+• The WhatsApp API dependency is a single point of failure. The fallback flow is mentioned but not 
+designed in detail. This is a launch risk. 
+--- Page 3 ---
+KOVA — CONFIDENTIAL  Market 
+Intelligence & Competitor Analysis  |  May 2026 
+kova  |  Your business, seen properly.   Page  
+• Onboarding conversion from the 'powered by Kova' link is assumed but not measured. This is the 
+viral loop — it needs its own funnel metrics. 
+ 
+  
+--- Page 4 ---
+KOVA — CONFIDENTIAL  Market 
+Intelligence & Competitor Analysis  |  May 2026 
+kova  |  Your business, seen properly.   Page  
+SECTION 02 
+Market Intelligence Report 
+The opportunity, the timing, and the macro forces 
+ 
+2.1 Market Size & Opportunity 
+ 
+40M+ 
+Nigerian WhatsApp Users 
+Most active social platform in country 
+95% 
+Digital Population on WhatsApp 
+Q3 2023 penetration rate 
+37M+ 
+Micro & Small Businesses 
+Estimated Nigerian MSME base 
+ 
+$17.4B 
+Global SMB Accounting 
+Software 
+Market value 2024, growing at 7.3% 
+CAGR 
+98% 
+WhatsApp Message Open Rate 
+vs. 20% for email 
+68% 
+SMBs Unaware of FIRS 
+Mandate 
+Lagos survey — compliance urgency 
+rising 
+ 
+2.2 Regulatory Tailwind — The FIRS e-Invoicing Mandate 
+This is the most significant market development that is not addressed in the current PRD and 
+represents both a major opportunity and a near-term risk. 
+ 
+ CRITICAL CONTEXT 
+Nigeria's FIRS has mandated e-invoicing for all VAT-registered businesses. Large taxpayers 
+went live November 2025. Medium and small businesses entered mandatory compliance from 
+January 2026. 68% of small businesses in Lagos were unaware of this mandate as of late 
+2025. 
+ 
+What this means for Kova: 
+• Urgency to digitise is now government-mandated, not just aspirational. Kova enters a market 
+where the 'why bother?' objection is increasingly answered by compliance pressure. 
+• Nigeria's system uses Peppol BIS Billing 3.0 — a structured international standard. Kova's current 
+invoice format is not compliant. This is a v1.1 priority. 
+• The mandate creates a category education moment. Businesses actively searching for invoicing 
+tools have surged. Kova's SEO and content strategy should pivot to capture this demand. 
+• Enforcement timelines run through 2027-2028 for smaller businesses, giving Kova a window to 
+integrate compliance before it becomes blocking. 
+ 
+--- Page 5 ---
+KOVA — CONFIDENTIAL  Market 
+Intelligence & Competitor Analysis  |  May 2026 
+kova  |  Your business, seen properly.   Page  
+2.3 Market Dynamics & Trends 
+Trend Impact on Kova Urgency 
+FIRS e-invoicing mandate live Creates urgency to digitise, Kova must 
+address compliance 
+HIGH — Now 
+WhatsApp Business API 
+maturing 
+Lower costs, more reliability, richer features 
+available 
+MEDIUM — 2026 
+Nigeria fintech infrastructure 
+deepening 
+Easier payment integrations, lower friction 
+for pay links 
+HIGH — Ongoing 
+Mobile-first Android dominance Validates PWA approach, 3G optimisation 
+is correct 
+HIGH — Ongoing 
+SMB platform fatigue with 
+complex tools 
+Kova's simplicity is a genuine differentiator HIGH — Ongoing 
+AI-powered business tools 
+emerging 
+Opportunity for Kova to add AI invoice 
+drafting, insights 
+MEDIUM — 2026-
+27 
+Increasing trust in branded 
+digital touchpoints 
+Validates Kova's core premise — 
+perception = revenue 
+HIGH — Ongoing 
+ 
+2.4 Target Market Deep Dive 
+The PRD's four personas (Kemi, Chidi, Ngozi, Bello) are well-constructed. Here is an expanded view of 
+the addressable segments: 
+ 
+Segment Est. Nigeria 
+Size 
+WhatsApp 
+Usage 
+Pain 
+Intensity 
+Willingness to Pay 
+Beauty & Wellness 
+(salons, spas, makeup) 
+~800,000 
+businesses 
+Very High Very High Medium — 
+₦3,500/mo 
+Food & Catering ~1.2M 
+businesses 
+Very High High Medium 
+Home Services 
+(plumbers, electricians) 
+~500,000 
+businesses 
+High Very High Low-Medium 
+Fashion & Tailoring ~600,000 
+businesses 
+High High Medium 
+Freelancers (designers, 
+writers, lawyers) 
+~300,000 
+professionals 
+High Medium High — Pro tier 
+Event Services ~200,000 
+businesses 
+High High Medium-High 
+ 
+2.5 Distribution & Go-to-Market Assessment 
+The 'powered by Kova' viral loop is the single most important distribution mechanism in the product. 
+Every client who receives a beautiful invoice is a potential future business owner on the platform. 
+--- Page 6 ---
+KOVA — CONFIDENTIAL  Market 
+Intelligence & Competitor Analysis  |  May 2026 
+kova  |  Your business, seen properly.   Page  
+However, the conversion rate from client-page-view to business-signup needs to be instrumented from 
+day one. 
+ 
+ Engineer's Note 
+The 'powered by Kova' link needs to land on a dedicated page — not the homepage. It should 
+say: 'Your [service provider] uses Kova to send professional invoices. Want to look this 
+professional too?' The signup rate from this page will determine whether the viral loop works. 
+Target: >3% click-to-signup. 
+ 
+  
+--- Page 7 ---
+KOVA — CONFIDENTIAL  Market 
+Intelligence & Competitor Analysis  |  May 2026 
+kova  |  Your business, seen properly.   Page  
+SECTION 03 
+Competitor Analysis 
+Who is in the arena and how Kova wins 
+ 
+3.1 Competitive Landscape Overview 
+Kova operates at the intersection of three markets: invoicing tools, client experience platforms, and 
+WhatsApp business tools. No single competitor occupies all three. This is Kova's strategic whitespace. 
+ 
+ Strategic Whitespace 
+There is no tool in the Nigerian market — or globally — that combines WhatsApp-native 
+invoice creation, branded client experience pages, real-time open notifications, and a 
+reputation layer in a single 30-second flow. That is Kova's moat. 
+ 
+3.2 Direct Competitors 
+Bumpa — Highest Priority Threat 
+Dimension Bumpa Kova 
+Founded 2021, Lagos 2026 (pre-launch) 
+Funding $4.2M seed (Base10, Visa Africa 
+Accelerator) 
+Pre-seed (assumed) 
+Core focus Full retail & eCommerce 
+management platform 
+Client experience + invoicing, 
+service businesses 
+Invoicing Has Invoice Generator 2.0 feature Core product, designed to be 
+fastest in market 
+WhatsApp integration Indirect — notifications, not creation 
+flow 
+Native — invoice created via 
+WhatsApp bot 
+Client-facing page Basic order/payment page Branded, premium, share-worthy 
+client page 
+Target user Retail sellers with products to 
+manage 
+Service businesses (salons, 
+plumbers, caterers) 
+Pricing ~₦10,000/month (full platform) ₦3,500/mo Pro — more 
+accessible 
+Kova advantage — Faster, simpler, purpose-built for 
+service SMBs, WhatsApp-native, 
+reputation layer 
+ 
+Verdict: Bumpa is the closest competitor but is a horizontally broad platform targeting retail product 
+sellers. Kova is vertically focused on service businesses. The overlap is real but the ICP (ideal 
+--- Page 8 ---
+KOVA — CONFIDENTIAL  Market 
+Intelligence & Competitor Analysis  |  May 2026 
+kova  |  Your business, seen properly.   Page  
+customer profile) is distinct. Kova should position against Bumpa's complexity, not compete feature-for-
+feature. 
+ 
+Afri Invoice — Regulatory Compliance Angle 
+Afri Invoice launched in 2025 as a direct response to the FIRS e-invoicing mandate. It focuses on 
+compliance, VAT calculation, and multi-currency invoicing for African SMEs. It does not have a 
+WhatsApp-native flow or a branded client experience layer. Kova should monitor this closely and 
+consider a FIRS-compliance integration partnership or feature to neutralise this threat before 
+enforcement deadlines tighten. 
+ 
+3.3 Indirect Competitors 
+Competitor Strength Weakness vs Kova Threat Level 
+Wave / 
+QuickBooks 
+Brand recognition, 
+accounting depth 
+Desktop-heavy, not WhatsApp-
+native, generic UX 
+Low — wrong 
+audience 
+Zoho Books Affordable, cloud-
+based, Nigerian 
+compliance 
+Complex setup, not mobile-first, 
+no WhatsApp bot 
+Low-Medium 
+Paystack 
+Storefront 
+Trusted payment rails, 
+strong brand 
+Not invoicing, no client 
+experience layer 
+Low — different 
+job 
+Generic PDF 
+invoicing 
+Free, already used by 
+target market 
+No branding, no tracking, no 
+payment link 
+Medium — 
+inertia risk 
+WhatsApp 
+Business native 
+Zero cost, already in 
+use 
+No professional page, no invoice 
+tracking, no brand 
+High — inertia 
+risk 
+Canva / manual 
+PDF design 
+Beautiful outputs 
+possible 
+Hours to create, no automation, 
+no tracking 
+Low 
+WATI / Kommo 
+(WhatsApp CRM) 
+Automation, multi-
+agent, Nigerian 
+adoption 
+Not invoicing-focused, complex, 
+expensive 
+Low-Medium 
+ 
+3.4 Competitive Positioning Map 
+The two axes that matter most for Kova's market position are: (1) Ease of use / speed to send, and (2) 
+Professionalism of client experience. On these axes, Kova should claim the top-right quadrant — 
+fastest and most professional. No competitor currently occupies this space. 
+ 
+ Low Professionalism High Professionalism 
+Fast / Simple WhatsApp voice note, generic PDF 
+(incumbent behaviour) 
+KOVA — Target position 
+--- Page 9 ---
+KOVA — CONFIDENTIAL  Market 
+Intelligence & Competitor Analysis  |  May 2026 
+kova  |  Your business, seen properly.   Page  
+ Low Professionalism High Professionalism 
+Slow / Complex Verbal confirmation, handwritten 
+receipt 
+Wave, QuickBooks, Zoho — overkill 
+for target market 
+ 
+3.5 Differentiation Strategy 
+Kova should communicate its differentiation on three dimensions — and in this order: 
+• Invoice in 30 seconds via WhatsApp. No app switching, no login, no learning curve. Faster 
+than any competitor by design. Speed 
+• Your client receives a page that looks like a top agency built it. Not a PDF. Not a 
+screenshot. A real branded web page they can pay from and review on. Premium client 
+experience 
+• Every invoice Kova sends builds your rating. Leave and you lose your history, your 
+reviews, and your professional identity. No competitor offers transaction-backed reviews 
+for service businesses. Reputation compounding 
+ 
+  
+--- Page 10 ---
+KOVA — CONFIDENTIAL  Market 
+Intelligence & Competitor Analysis  |  May 2026 
+kova  |  Your business, seen properly.   Page  
+SECTION 04 
+Stakeholder Interview Guide 
+The questions that will sharpen Kova before launch 
+ 
+4.1 How to Use This Guide 
+These interview guides are designed for three distinct stakeholder groups: Potential Business Owners 
+(primary users), Clients of small businesses (secondary users / virality test), and Investors / Advisors. 
+Each guide is structured to uncover jobs-to-be-done, pain depth, and willingness to pay — not feature 
+preferences. 
+ 
+ Interview Principle 
+Never ask: 'Would you use this feature?' Always ask: 'Tell me about the last time you sent an 
+invoice. Walk me through exactly what happened.' Behaviour over opinion. Story over 
+preference. 
+ 
+4.2 Business Owner Interview Guide 
+Profile to recruit 
+Lagos-based service business owner, 1-5 employees, actively uses WhatsApp for business. Mix of 
+beauty, food, home services, and freelancers. 60% female. Ages 24-42. Sessions: 45 minutes. Format: 
+In-person or WhatsApp voice call. 
+ 
+Opening (5 min) — Build rapport, establish context 
+1. Tell me about your business — what do you do, how long have you been doing it, and how many 
+clients do you serve in a typical month? 
+2. Walk me through a typical week. When do you have the most clients? What does your busiest 
+day look like? 
+ 
+Current Invoicing Behaviour (10 min) — Map the current state 
+3. When you finish a job, how do you collect payment? Walk me through exactly what happens from 
+the moment the job is done. 
+4. Do you send any kind of receipt or summary to clients? Show me what it looks like if you can. 
+5. Have you ever had a client not pay, or delay payment? What happened? How did you follow up? 
+6. How many invoices or receipts do you send in a week? How long does each one take? 
+7. Have you ever lost a client or a referral because someone else looked more professional than 
+you? What happened? 
+ 
+--- Page 11 ---
+KOVA — CONFIDENTIAL  Market 
+Intelligence & Competitor Analysis  |  May 2026 
+kova  |  Your business, seen properly.   Page  
+Perception & Aspiration (10 min) — Surface the emotional pain 
+8. When a new client contacts you for the first time, what impression do you want them to have of 
+your business? 
+9. Think of a business you respect — maybe in your industry or outside it. What makes them look 
+professional to you? 
+10. If a client told you they chose a competitor because they 'seemed more professional,' how 
+would that make you feel? 
+11. Have you ever tried a tool to help run your business — any app or website? What was that 
+experience like? 
+ 
+Concept Reaction (10 min) — Show, don't tell 
+ Facilitator Note 
+Show the participant an example branded Kova client page. Do not describe the product first. 
+Let them react to what they see. Ask open questions. Avoid leading language. 
+ 
+12. [Show branded client page] — What is your first reaction when you see this? 
+13. If you sent this to a client after finishing a job, how do you think they would react? 
+14. What would stop you from sending this instead of what you currently send? 
+15. If creating this took 30 seconds and happened through WhatsApp — would that change 
+anything for you? 
+16. This is a paid tool. If it helped you look more professional, get paid faster, and build your 
+reputation over time — what would feel like a fair price per month? 
+ 
+Wrap-up (5 min) 
+17. If you could change one thing about how your business communicates with clients right now, 
+what would it be? 
+18. Is there anyone else I should speak to — someone who you think would love this, or someone 
+who would definitely not use it? 
+ 
+4.3 Client (End User) Interview Guide 
+Profile to recruit 
+Nigerian consumer who has hired a micro-business service in the past 3 months. Mix of genders. Ages 
+22-50. Urban (Lagos, Abuja, PH). Sessions: 25 minutes. Format: WhatsApp voice call or in-person. 
+ 
+Key Questions 
+19. Think about the last time you hired someone — a caterer, a hairdresser, a plumber. How did 
+you find them? 
+20. After the job was done, what happened? Did they send you anything? How did you pay? 
+--- Page 12 ---
+KOVA — CONFIDENTIAL  Market 
+Intelligence & Competitor Analysis  |  May 2026 
+kova  |  Your business, seen properly.   Page  
+21. Has a small business ever sent you something — a receipt, a summary, anything — that made 
+you think 'wow, this person is really professional'? What was it? 
+22. [Show example Kova client page] — Imagine you received this after getting your hair done. 
+What would you think? 
+23. Would receiving this make you more or less likely to recommend that business to a friend? 
+Why? 
+24. If you saw 'powered by Kova' at the bottom and could click it — what would you expect to find? 
+25. Would you leave a review on a page like this? What would make you more likely to do it? 
+26. If you run your own business or side hustle, would you want to send something like this to your 
+own clients? 
+ 
+4.4 Investor / Advisor Interview Guide 
+Profile 
+Angel investors, seed-stage VCs active in African tech (particularly Nigeria), fintech operators, and 
+advisors with SMB tool experience. Sessions: 45-60 minutes. Format: Video call. 
+ 
+Key Questions 
+27. What is your mental model for the Nigerian MSME tools market right now? Where are the white 
+spaces you see? 
+28. What have you seen in this space that worked? What didn't, and why? 
+29. [Present Kova thesis] — What is your immediate reaction? Where is your scepticism highest? 
+30. The WhatsApp Business API is central to the product. How do you think about platform risk with 
+Meta as a dependency? 
+31. Bumpa has raised $4.2M and is the closest analogue. How would you think about Kova's 
+differentiation relative to them? 
+32. The FIRS e-invoicing mandate is now active. Does Kova need to be compliant from day one, or 
+is that a later problem? 
+33. What metrics would you need to see at the end of the beta phase to want to invest? 
+34. If Kova succeeds in Nigeria, what is the right next market — and what changes about the 
+product when you go there? 
+35. What would make you a champion for this product? What would you need to believe? 
+ 
+  
+--- Page 13 ---
+KOVA — CONFIDENTIAL  Market 
+Intelligence & Competitor Analysis  |  May 2026 
+kova  |  Your business, seen properly.   Page  
+SECTION 05 
+Strategic Recommendations 
+What to act on before and after launch 
+ 
+5.1 Pre-Launch Priorities (Before Q3 2026) 
+Priority Recommendation Why It Matters 
+P0 Instrument the 'powered by 
+Kova' viral loop from day one 
+This is the primary growth engine. Without 
+measurement, you can't optimise it. 
+P0 Design a dedicated conversion 
+page for client-side discovery 
+Current PRD assumes conversion happens. It needs to 
+be designed, not assumed. 
+P0 Add 'FIRS compliance roadmap' 
+to the product narrative 
+68% of Lagos SMBs are unaware of the mandate. 
+Kova can be the trusted guide. 
+P1 Build the web fallback invoice 
+flow in parallel with the bot 
+WhatsApp API risk is real. The fallback must be 
+launch-ready, not an afterthought. 
+P1 Define the viral coefficient target 
+for beta 
+Target: each business owner should bring in at least 
+1.3 clients who become business owners. 
+P2 Research Peppol compliance 
+requirements for v1.1 planning 
+Not needed for MVP but will be a blocker for serious 
+business customers in 12 months. 
+ 
+5.2 Design Imperatives — From an Awwwards-Level Lens 
+The product vision is premium. The execution must match it at every pixel. Here are the non-
+negotiables: 
+ 
+• The client page IS the product. It is the one thing every single person touches. It must be 
+extraordinary. Not good. Not clean. Extraordinary. Every visual decision on that page either 
+validates the business owner's investment in Kova or undermines it. 
+• Motion and micro-interactions matter enormously on a reputation product. When a client opens 
+the page, it should feel like receiving something premium in the post. The load animation, the 
+invoice reveal, the pay button — each should have intentional motion. 
+• The 'paid' state deserves a celebration moment. When payment is confirmed, the page should 
+transform. The business owner's WhatsApp notification should feel joyful. These moments build 
+the dopamine loop that drives retention. 
+• Brand colour application on client pages must feel premium, not garish. The 12 preset colour 
+options should all look beautiful with the Kova layout — if even one looks bad, users will distrust 
+the tool. 
+• Typography hierarchy on the client page is load-bearing. On a 3G Android device, a well-set 
+typographic hierarchy will render before images load. The page must be readable and compelling 
+in its skeletal state. 
+ 
+--- Page 14 ---
+KOVA — CONFIDENTIAL  Market 
+Intelligence & Competitor Analysis  |  May 2026 
+kova  |  Your business, seen properly.   Page  
+5.3 The One Metric That Matters Most 
+ North Star Metric 
+Percentage of invoiced jobs that result in payment within 48 hours. This single number 
+captures product-market fit (did the client page work?), payment friction (is the pay flow 
+easy?), and business owner value (are they getting paid faster?). Everything else is 
+secondary. 
+ 
+5.4 Final Assessment 
+Kova has the ingredients of a genuinely important product. The problem is real, the distribution insight 
+is elegant, the retention architecture is thoughtful, and the market timing — with the FIRS mandate 
+creating urgency — is exceptional. 
+ 
+The risk is execution quality. In a market where trust is earned through perception, a single ugly client 
+page, a slow-loading invoice, or a broken payment link will not just lose a user — it will embarrass the 
+business owner in front of their client. The bar for quality is existential, not aspirational. 
+ 
+If the team can maintain 30-second invoice creation, sub-2-second page loads on 3G, and a client-
+page design that genuinely makes people say 'wow' — Kova will grow through word of mouth alone. 
+ 
+ Final Word 
+The best products in emerging markets don't just solve a problem. They give people dignity. 
+Kova has a genuine shot at doing that for millions of small business owners across Nigeria 
+and beyond. Build it like that matters. Because it does. 
+ 
+  
+--- Page 15 ---
+KOVA — CONFIDENTIAL  Market 
+Intelligence & Competitor Analysis  |  May 2026 
+kova  |  Your business, seen properly.   Page  
+kova 
+Your business, seen properly. 
+ 
+kovahq.com  |  hello@kovahq.com 
+Confidential — Not for distribution 
+

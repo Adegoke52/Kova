@@ -1,0 +1,74 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Business {
+  id              String    @id @default(cuid())
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  name            String
+  phone           String    @unique
+  location        String?
+  logoUrl         String?
+  brandColor      String    @default("#1A1060")
+  bankName        String?
+  accountNumber   String?
+  accountName     String?
+  invoices        Invoice[]
+  clients         Client[]
+  reviews         Review[]
+  isActive        Boolean   @default(true)
+}
+
+model Client {
+  id          String    @id @default(cuid())
+  createdAt   DateTime  @default(now())
+  name        String
+  phone       String?
+  businessId  String
+  business    Business  @relation(fields: [businessId], references: [id])
+  invoices    Invoice[]
+}
+
+model Invoice {
+  id            String    @id @default(cuid())
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  invoiceNumber String    @unique
+  totalAmount   Float
+  items         Json      // [{name: string, amount: number}]
+  status        String    @default("PENDING") // PENDING, PAID, CANCELLED
+  pageToken     String    @unique
+  openedAt      DateTime?
+  claimedAt     DateTime?
+  businessId    String
+  business      Business  @relation(fields: [businessId], references: [id])
+  clientId      String
+  client        Client    @relation(fields: [clientId], references: [id])
+  review        Review?
+}
+
+model Review {
+  id          String    @id @default(cuid())
+  createdAt   DateTime  @default(now())
+  rating      Int
+  comment     String?
+  invoiceId   String    @unique
+  invoice     Invoice   @relation(fields: [invoiceId], references: [id])
+  businessId  String
+  business    Business  @relation(fields: [businessId], references: [id])
+}
+
+model BotSession {
+  phone     String    @id
+  state     String    @default("IDLE")
+  data      Json      @default("{}")
+  updatedAt DateTime  @updatedAt
+}
