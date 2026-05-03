@@ -146,6 +146,7 @@ export default function LoginPage() {
                 className="space-y-6"
               >
                 {!showOtp ? (
+                  <div className="space-y-6">
                     <div className="space-y-2">
                       <label className="text-[10px] font-black text-white/40 uppercase tracking-[0.2em] ml-2">WhatsApp Number</label>
                       <Input 
