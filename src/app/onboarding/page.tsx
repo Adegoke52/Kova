@@ -129,7 +129,7 @@ export default function OnboardingPage() {
             {step === 1 && <Step1Phone onNext={nextStep} updateData={updateFormData} data={formData} />}
             {step === 2 && <Step2Identity onNext={nextStep} updateData={updateFormData} data={formData} />}
             {step === 3 && <Step3Color onNext={nextStep} updateData={updateFormData} data={formData} />}
-            {step === 4 && <Step4Payment onNext={handleComplete} updateData={updateFormData} data={formData} />}
+            {step === 4 && <Step4Payment onNext={() => handleComplete()} updateData={updateFormData} data={formData} />}
             {step === 5 && <Step5Success data={formData} />}
           </motion.div>
         </AnimatePresence>

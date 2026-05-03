@@ -25,12 +25,46 @@ export default function DashboardPage() {
   const [brandColor, setBrandColor] = useState("#1A1060");
 
   useEffect(() => {
-     const savedData = localStorage.getItem('kova_onboarding');
-     if (savedData) {
-       const parsed = JSON.parse(savedData);
-       setBusinessName(parsed.name || "Your Business");
-       setBrandColor(parsed.brandColor || "#1A1060");
+     async function loadData() {
+       // 1. Try Local Storage
+       const savedData = localStorage.getItem('kova_onboarding');
+       if (savedData) {
+         const parsed = JSON.parse(savedData);
+         setBusinessName(parsed.name || "Your Business");
+         setBrandColor(parsed.brandColor || "#1A1060");
+         return;
+       }
+
+       // 2. Fallback to Database
+       const phone = localStorage.getItem('kova_user_phone');
+       if (phone) {
+         try {
+           const { supabase } = await import("@/lib/supabase");
+           const { data, error } = await supabase
+             .from('businesses')
+             .select('*')
+             .eq('phone', phone)
+             .single();
+           
+           if (data && !error) {
+             setBusinessName(data.business_name);
+             setBrandColor(data.brand_color);
+             // Re-save to local for next time
+             localStorage.setItem('kova_onboarding', JSON.stringify({
+               name: data.business_name,
+               brandColor: data.brand_color,
+               location: data.location,
+               bankName: data.bank_name,
+               accountNumber: data.account_number,
+               accountName: data.account_name
+             }));
+           }
+         } catch (err) {
+           console.error("DB Sync failed:", err);
+         }
+       }
      }
+     loadData();
   }, []);
 
   const stats = [

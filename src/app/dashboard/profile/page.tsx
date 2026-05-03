@@ -33,22 +33,68 @@ export default function ProfilePage() {
   const [initials, setInitials] = useState("YB");
 
   useEffect(() => {
-    const savedData = localStorage.getItem('kova_onboarding');
-    if (savedData) {
-      const parsed = JSON.parse(savedData);
-      setProfile({
-        name: parsed.name || "Your Business",
-        location: parsed.location || "Lagos, Nigeria",
-        bankName: parsed.bankName || "GT Bank",
-        accountNumber: parsed.accountNumber || "0000000000",
-        accountName: parsed.accountName || parsed.name || "Owner Name",
-        brandColor: parsed.brandColor || "#1A1060",
-        tier: "PRO",
-      });
-      
-      const words = (parsed.name || "Your Business").split(" ");
-      setInitials(words.length > 1 ? (words[0][0] + words[1][0]).toUpperCase() : words[0].substring(0, 2).toUpperCase());
+    async function loadProfile() {
+      // 1. Try Local Storage
+      const savedData = localStorage.getItem('kova_onboarding');
+      if (savedData) {
+        const parsed = JSON.parse(savedData);
+        setProfile({
+          name: parsed.name || "Your Business",
+          location: parsed.location || "Lagos, Nigeria",
+          bankName: parsed.bankName || "GT Bank",
+          accountNumber: parsed.accountNumber || "0000000000",
+          accountName: parsed.accountName || parsed.name || "Owner Name",
+          brandColor: parsed.brandColor || "#1A1060",
+          tier: "PRO",
+        });
+        
+        const words = (parsed.name || "Your Business").split(" ");
+        setInitials(words.length > 1 ? (words[0][0] + words[1][0]).toUpperCase() : words[0].substring(0, 2).toUpperCase());
+        return;
+      }
+
+      // 2. Fallback to Database
+      const phone = localStorage.getItem('kova_user_phone');
+      if (phone) {
+        try {
+          const { supabase } = await import("@/lib/supabase");
+          const { data, error } = await supabase
+            .from('businesses')
+            .select('*')
+            .eq('phone', phone)
+            .single();
+          
+          if (data && !error) {
+            const updatedProfile = {
+              name: data.business_name,
+              location: data.location || "Lagos, Nigeria",
+              bankName: data.bank_name || "GT Bank",
+              accountNumber: data.account_number || "0000000000",
+              accountName: data.account_name || data.business_name,
+              brandColor: data.brand_color || "#1A1060",
+              tier: "PRO",
+            };
+            setProfile(updatedProfile);
+            
+            const words = data.business_name.split(" ");
+            setInitials(words.length > 1 ? (words[0][0] + words[1][0]).toUpperCase() : words[0].substring(0, 2).toUpperCase());
+            
+            // Re-save to local
+            localStorage.setItem('kova_onboarding', JSON.stringify({
+              name: updatedProfile.name,
+              brandColor: updatedProfile.brandColor,
+              location: updatedProfile.location,
+              bankName: updatedProfile.bankName,
+              accountNumber: updatedProfile.accountNumber,
+              accountName: updatedProfile.accountName
+            }));
+          }
+        } catch (err) {
+          console.error("Profile DB Sync failed:", err);
+        }
+      }
     }
+    loadProfile();
   }, []);
 
   const colors = ["#1A1060", "#7F77DD", "#1D9E75", "#9E1D1D", "#1D5C9E", "#9E7B1D"];
