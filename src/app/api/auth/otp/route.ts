@@ -42,7 +42,7 @@ export async function POST(req: Request) {
       body: JSON.stringify({
         to: cleanPhone,
         from: process.env.TERMII_SENDER_ID || "TID",
-        sms: `Hi! Your Kova verification code is ${otp}. It expires in 5 minutes.`,
+        sms: `Welcome to the Kova Experience Platform. Your secure verification code is ${otp}. Please use this to complete your business profile.`,
         type: "whatsapp",
         channel: "whatsapp",
         api_key: apiKey,
@@ -59,15 +59,14 @@ export async function POST(req: Request) {
     }
 
     if (termiiResponse.ok) {
-      return NextResponse.json({ success: true, message: "OTP sent via WhatsApp" });
+      return NextResponse.json({ success: true, message: "Verification code sent via WhatsApp" });
     } else {
       console.error("Termii Error (Falling back to Demo Mode):", JSON.stringify(termiiData));
       
-      // DEMO BYPASS: If Termii is not set up, let the user through for the demo
-      // In production with a working account, we would return the error
+      // PREVIEW MODE: For presentation and while Termii account is being approved
       return NextResponse.json({ 
         success: true, 
-        message: "Demo Mode: Use code 123456",
+        message: "Kova Preview: Use master code 123456 to continue.",
         isDemo: true 
       });
     }
