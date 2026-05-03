@@ -21,14 +21,35 @@ import { cn } from "@/lib/utils";
 export default function ProfilePage() {
   const [loading, setLoading] = useState(false);
   const [profile, setProfile] = useState({
-    name: "Kemi's Salon",
-    location: "Lekki Phase 1, Lagos",
+    name: "Your Business",
+    location: "Loading...",
     bankName: "GT Bank",
-    accountNumber: "0123456789",
-    accountName: "Kemi Adeyemi",
+    accountNumber: "0000000000",
+    accountName: "Owner Name",
     brandColor: "#1A1060",
     tier: "PRO",
   });
+
+  const [initials, setInitials] = useState("YB");
+
+  useEffect(() => {
+    const savedData = localStorage.getItem('kova_onboarding');
+    if (savedData) {
+      const parsed = JSON.parse(savedData);
+      setProfile({
+        name: parsed.name || "Your Business",
+        location: parsed.location || "Lagos, Nigeria",
+        bankName: parsed.bankName || "GT Bank",
+        accountNumber: parsed.accountNumber || "0000000000",
+        accountName: parsed.accountName || parsed.name || "Owner Name",
+        brandColor: parsed.brandColor || "#1A1060",
+        tier: "PRO",
+      });
+      
+      const words = (parsed.name || "Your Business").split(" ");
+      setInitials(words.length > 1 ? (words[0][0] + words[1][0]).toUpperCase() : words[0].substring(0, 2).toUpperCase());
+    }
+  }, []);
 
   const colors = ["#1A1060", "#7F77DD", "#1D9E75", "#9E1D1D", "#1D5C9E", "#9E7B1D"];
 
@@ -56,7 +77,7 @@ export default function ProfilePage() {
         <div className="flex flex-col items-center mb-8">
           <div className="relative">
             <div className="w-24 h-24 rounded-full border-4 border-kova-mist flex items-center justify-center bg-white text-3xl font-black" style={{ color: profile.brandColor }}>
-              KS
+              {initials}
             </div>
             <button className="absolute bottom-0 right-0 p-2 bg-kova-navy text-white rounded-full shadow-lg">
               <Camera className="w-4 h-4" />

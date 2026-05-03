@@ -25,8 +25,6 @@ export default function DashboardPage() {
   const [brandColor, setBrandColor] = useState("#1A1060");
 
   useEffect(() => {
-     // In production, fetch from Supabase based on session
-     // For demo, we'll keep it static or pull from local storage if saved
      const savedData = localStorage.getItem('kova_onboarding');
      if (savedData) {
        const parsed = JSON.parse(savedData);
