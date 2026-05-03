@@ -121,7 +121,7 @@ export default function LoginPage() {
                         placeholder="+234 ..." 
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
-                        className="h-14 bg-black/40 border-white/10 text-white placeholder:text-white/20 rounded-2xl px-6 focus:ring-2 focus:ring-[#25D366] transition-all"
+                        className="h-14 bg-white border-white/10 text-black placeholder:text-gray-400 rounded-2xl px-6 focus:ring-2 focus:ring-[#25D366] transition-all"
                       />
                     {error && <p className="text-xs text-red-400 ml-2">{error}</p>}
                     <p className="text-[10px] text-white/40 ml-2">We'll send a 6-digit code to your WhatsApp.</p>
