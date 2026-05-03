@@ -76,8 +76,10 @@ export default function DashboardPage() {
              <Button variant="outline" className="h-14 rounded-2xl border-kova-navy/10 font-black px-8">
                Manage Profile
              </Button>
-             <Button className="h-14 rounded-2xl bg-kova-navy text-white font-black px-8 flex gap-3 shadow-xl shadow-kova-navy/20">
-               <Plus className="w-5 h-5" />
+             <Button className="h-14 rounded-2xl bg-kova-navy text-white font-black px-8 flex items-center gap-3 shadow-[0_15px_30px_rgba(26,16,96,0.25)] hover:scale-105 active:scale-95 transition-all">
+               <div className="w-6 h-6 rounded-lg bg-white/10 flex items-center justify-center">
+                 <Plus className="w-4 h-4 text-white" strokeWidth={3} />
+               </div>
                Create Invoice
              </Button>
           </div>
