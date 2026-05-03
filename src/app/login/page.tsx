@@ -64,8 +64,9 @@ export default function LoginPage() {
       });
       
       if (response.ok) {
-        // Save phone for session persistent lookup
-        localStorage.setItem("kova_user_phone", phone);
+        // Save phone for session persistent lookup (Normalized)
+        const { normalizePhone } = await import("@/lib/utils");
+        localStorage.setItem("kova_user_phone", normalizePhone(phone));
         
         // Success! Force a fresh load of the dashboard
         window.location.replace("/dashboard");

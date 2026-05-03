@@ -20,3 +20,13 @@ export function formatDate(date: Date | string) {
     year: "numeric",
   }).format(new Date(date));
 }
+
+export function normalizePhone(phone: string) {
+  let clean = phone.replace(/\D/g, "");
+  if (clean.startsWith("0")) {
+    clean = "234" + clean.substring(1);
+  } else if (!clean.startsWith("234") && clean.length <= 10) {
+    clean = "234" + clean;
+  }
+  return clean;
+}

@@ -33,12 +33,15 @@ export default function OnboardingPage() {
   };
 
   const handleComplete = async () => {
+    const { normalizePhone } = await import("@/lib/utils");
+    const cleanPhone = normalizePhone(formData.phone);
+    
     try {
       const { supabase } = await import("@/lib/supabase");
       await supabase
         .from('businesses')
         .upsert({
-          phone: formData.phone,
+          phone: cleanPhone,
           business_name: formData.name,
           location: formData.location,
           brand_color: formData.brandColor,
@@ -51,7 +54,9 @@ export default function OnboardingPage() {
     }
 
     // Fallback for dashboard demo
-    localStorage.setItem('kova_onboarding', JSON.stringify(formData));
+    const finalData = { ...formData, phone: cleanPhone };
+    localStorage.setItem('kova_user_phone', cleanPhone);
+    localStorage.setItem('kova_onboarding', JSON.stringify(finalData));
     
     setStep(5);
   };

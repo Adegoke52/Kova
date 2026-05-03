@@ -36,9 +36,12 @@ export default function DashboardPage() {
        }
 
        // 2. Fallback to Database
-       const phone = localStorage.getItem('kova_user_phone');
+       let phone = localStorage.getItem('kova_user_phone');
        if (phone) {
          try {
+           const { normalizePhone } = await import("@/lib/utils");
+           phone = normalizePhone(phone);
+           
            const { supabase } = await import("@/lib/supabase");
            const { data, error } = await supabase
              .from('businesses')
