@@ -9,7 +9,8 @@ export async function POST(req: NextRequest) {
     const formData = await req.formData();
     const body = formData.get("Body")?.toString().trim() || "";
     const from = formData.get("From")?.toString() || "";
-    const phone = from.replace("whatsapp:", "");
+    // Ensure phone number has no 'whatsapp:' prefix and NO '+' sign to match DB
+    const phone = from.replace("whatsapp:", "").replace("+", "");
 
     // 1. Check if business exists
     const business = await prisma.business.findUnique({

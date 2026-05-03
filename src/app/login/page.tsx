@@ -64,7 +64,8 @@ export default function LoginPage() {
       });
       
       if (response.ok) {
-        window.location.href = "/dashboard";
+        // Success! Force a fresh load of the dashboard
+        window.location.replace("/dashboard");
       } else {
         setError("Invalid verification code");
         setOtp(["", "", "", "", "", ""]);
