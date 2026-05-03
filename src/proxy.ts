@@ -56,10 +56,10 @@ export async function proxy(request: NextRequest) {
 
   const { data: { user } } = await supabase.auth.getUser();
 
-  // Protect dashboard routes
-  if (!user && request.nextUrl.pathname.startsWith("/dashboard")) {
-    return NextResponse.redirect(new URL("/onboarding", request.url));
-  }
+  // Protect dashboard routes - Temporarily disabled for WhatsApp-native flow
+  // if (!user && request.nextUrl.pathname.startsWith("/dashboard")) {
+  //   return NextResponse.redirect(new URL("/onboarding", request.url));
+  // }
 
   return response;
 }
