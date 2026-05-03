@@ -22,13 +22,7 @@ export default function InvoicesPage() {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("ALL");
 
-  const invoices = [
-    { id: "1", number: "INV-047", client: "Tunde Olowo", amount: 15000, status: "PAID", date: "2026-05-01", opened: true },
-    { id: "2", number: "INV-048", client: "Sarah Johnson", amount: 25000, status: "UNPAID", date: "2026-05-01", opened: true },
-    { id: "3", number: "INV-049", client: "Adebayo Mike", amount: 8500, status: "PAYMENT_CLAIMED", date: "2026-04-30", opened: true },
-    { id: "4", number: "INV-050", client: "Chioma Okoro", amount: 42000, status: "PAID", date: "2026-04-29", opened: false },
-    { id: "5", number: "INV-051", client: "Bello Hassan", amount: 12000, status: "OVERDUE", date: "2026-04-28", opened: true },
-  ];
+  const invoices: any[] = [];
 
   const filteredInvoices = invoices.filter(inv => {
     const matchesSearch = inv.client.toLowerCase().includes(search.toLowerCase()) || 

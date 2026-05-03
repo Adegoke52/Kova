@@ -7,15 +7,11 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export default function ReviewsPage() {
-  const reviews = [
-    { id: "1", client: "Tunde", rating: 5, comment: "Amazing service! My braids look incredible. Highly recommend Kemi.", date: "2026-05-01" },
-    { id: "2", client: "Sarah", rating: 4, comment: "Very professional and on time. Will definitely book again.", date: "2026-04-28" },
-    { id: "3", client: "Adebayo", rating: 5, comment: "Great communication throughout. The branded receipt made me feel very safe about the payment.", date: "2026-04-30" },
-    { id: "4", client: "Chioma", rating: 5, comment: "The best salon experience in Lekki. Period.", date: "2026-04-25" },
-    { id: "5", client: "Bello", rating: 3, comment: "Good job, but I had to wait a bit. The quality was worth it though.", date: "2026-04-20" },
-  ];
+  const reviews: any[] = [];
 
-  const averageRating = (reviews.reduce((acc, r) => acc + r.rating, 0) / reviews.length).toFixed(1);
+  const averageRating = reviews.length > 0 
+    ? (reviews.reduce((acc, r) => acc + r.rating, 0) / reviews.length).toFixed(1)
+    : "0.0";
 
   const ratingCounts = {
     5: reviews.filter(r => r.rating === 5).length,

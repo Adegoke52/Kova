@@ -53,7 +53,7 @@ export default function DashboardLayout({
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "flex items-center gap-3 px-4 py-3 rounded-2xl font-bold transition-all",
+                  "flex items-center gap-4 px-5 py-4 rounded-2xl font-bold transition-all",
                   isActive 
                     ? "bg-kova-navy text-kova-white shadow-lg shadow-kova-navy/20" 
                     : "text-kova-subtle hover:bg-kova-mist hover:text-kova-navy"

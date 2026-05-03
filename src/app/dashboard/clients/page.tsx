@@ -8,13 +8,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function ClientsPage() {
-  const clients = [
-    { id: "1", name: "Tunde Olowo", phone: "+234 801 234 5678", invoices: 5, totalPaid: 75000, lastJob: "2026-05-01" },
-    { id: "2", name: "Sarah Johnson", phone: "+234 701 987 6543", invoices: 2, totalPaid: 45000, lastJob: "2026-04-28" },
-    { id: "3", name: "Adebayo Mike", phone: "+234 812 333 4455", invoices: 1, totalPaid: 8500, lastJob: "2026-04-30" },
-    { id: "4", name: "Chioma Okoro", phone: "+234 905 555 6677", invoices: 8, totalPaid: 124000, lastJob: "2026-04-25" },
-    { id: "5", name: "Bello Hassan", phone: "+234 803 111 2233", invoices: 3, totalPaid: 36000, lastJob: "2026-04-20" },
-  ];
+  const clients: any[] = [];
 
   return (
     <div className="space-y-6">
