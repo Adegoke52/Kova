@@ -298,7 +298,7 @@ export default function LandingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
             {[
-              { before: "Handwritten receipt", after: "Branded Digital Page", icon: Zap, img: "https://images.unsplash.com/photo-1488459739036-39ee895dd41b?w=800&auto=format&fit=crop" },
+              { before: "Handwritten receipt", after: "Branded Digital Page", icon: Zap, img: "/features/branded-digital.png" },
               { before: "WhatsApp voice notes", after: "Instant Pay Links", icon: ShieldCheck, img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&auto=format&fit=crop" },
               { before: "Generic screenshots", after: "Verified Review Portal", icon: Star, img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop" },
             ].map((item, i) => (
